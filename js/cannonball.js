@@ -9,10 +9,13 @@ class CannonBall{
         this.image = loadImage("assets/cannonball.png")
     }
     show(){
-        push()
+        var angle = this.body.angle
         var pos = this.body.position
+        push()
+        translate(pos.x, pos.y)
+        rotate(angle)
         imageMode(RADIUS)
-        image(this.image,pos.x, pos.y, 40,40)
+        image(this.image,0,0, 40,40)
         pop()
     }
 }
